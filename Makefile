@@ -18,7 +18,7 @@ install:
 	@echo "Installing dependencies..."
 	$(PY) -m pip install poetry
 	$(POETRY) config virtualenvs.in-project true
-	$(POETRY) install
+	$(POETRY) install --no-root
 	@echo "Installation complete."
 
 # Launch: Passing an environment variable directly to the process

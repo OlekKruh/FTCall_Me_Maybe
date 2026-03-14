@@ -15,6 +15,7 @@ dependencies = [
 ]
 
 [tool.poetry.dependencies]
+llm-sdk = { path = "./llm_sdk", develop = true }
 
 [dependency-groups]
 dev = [
