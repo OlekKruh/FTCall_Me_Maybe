@@ -1,5 +1,5 @@
 [project]
-name = "call-my-maybe"
+name = "src"
 version = "0.1.0"
 package-mode = false
 description = "LLM Function Calling with Constrained Decoding"
