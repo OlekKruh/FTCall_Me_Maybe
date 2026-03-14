@@ -15,13 +15,11 @@ MYPY_FLAGS  = --warn-return-any \
 # Installation: Create a local venv
 # Установка: создаем локальный venv
 install:
-	@echo "Checking for Poetry..."
-	@command -v $(POETRY) >/dev/null 2>&1 || (echo "Poetry not found. Installing..." && $(PY) -m pip install $(POETRY))
-	@echo "Repairing lock file inconsistencies..."
-	$(POETRY) lock --no-update || $(POETRY) lock
-	@echo "Configuring virtual environment..."
+	@echo "Installing dependencies..."
+	$(PY) -m pip install poetry
 	$(POETRY) config virtualenvs.in-project true
 	$(POETRY) install
+	@echo "Installation complete."
 
 # Launch: Passing an environment variable directly to the process
 # Запуск: прокидываем переменную окружения прямо в процесс

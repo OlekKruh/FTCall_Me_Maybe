@@ -1,21 +1,18 @@
 [project]
 name = "call-my-maybe"
 version = "0.1.0"
-description = "LLM Function Calling with Constrained Decoding"
-authors = [
-    {name = "okruhlia", email = "okruhlia@student.42warsaw.pl"}
-]
-license = {text = "MIT"}
-requires-python = ">=3.12,<4.0"
+description = "LLM Function Calling for 42 Project"
+authors = [{name = "okruhlia", email = "okruhlia@student.42warsaw.pl"}]
+requires-python = ">=3.12"
 
 dependencies = [
     "alive-progress>=3.3.0",
-    "pydantic>=2.0.0",
-    "llm-sdk"
+    "pydantic>=2.0.0"
 ]
 
-[tool.poetry.dependencies]
-llm-sdk = { path = "./llm_sdk", develop = true }
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
 
 [dependency-groups]
 dev = [
