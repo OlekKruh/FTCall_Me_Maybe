@@ -31,7 +31,8 @@ run:
 # Линт проверка
 lint:
 	@echo "Running flake8 (syntax & logic)..."
-	$(POETRY) run flake8 . --exclude .venv,llm_sdk --count --select=E9,F63,F7,F82 --show-source --statistics
+	$(POETRY) run flake8 . \
+		--exclude .venv,llm_sdk --count --select=E9,F63,F7,F82 --show-source --statistics
 	@echo "Running mypy (type annotations)..."
 	$(POETRY) run mypy . $(MYPY_FLAGS) --exclude ".venv|llm_sdk"
 
