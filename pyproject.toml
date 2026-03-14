@@ -1,6 +1,7 @@
 [project]
 name = "call-my-maybe"
 version = "0.1.0"
+package-made = false
 description = "LLM Function Calling with Constrained Decoding"
 authors = [
     {name = "okruhlia", email = "okruhlia@student.42warsaw.pl"}
