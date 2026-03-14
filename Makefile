@@ -1,5 +1,5 @@
 POETRY      = poetry
-PY          = python
+PY          = python3
 MAIN        = main.py
 OUTPUT_DIR  = data/output
 LOCAL_HF_HOME = $(shell pwd)/.model_cache
@@ -15,7 +15,9 @@ MYPY_FLAGS  = --warn-return-any \
 # Installation: Create a local venv
 # Установка: создаем локальный venv
 install:
-	@echo "Configuring local venv..."
+	@echo "Checking for Poetry..."
+	@command -v $(POETRY) >/dev/null 2>&1 || (echo "Poetry not found. Installing via pip..." && $(PY) -m pip install $(POETRY))
+	@echo "Configuring virtual environment..."
 	$(POETRY) config virtualenvs.in-project true
 	$(POETRY) install
 
