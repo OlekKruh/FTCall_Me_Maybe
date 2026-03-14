@@ -25,7 +25,7 @@ install:
 # Запуск: прокидываем переменную окружения прямо в процесс
 run:
 	@echo "Starting with HF_HOME=$(LOCAL_HF_HOME)"
-	HF_HOME=$$(pwd)/.model_cache $(POETRY) run $(PY) /src/main.py
+	HF_HOME=$$(pwd)/.model_cache $(POETRY) run $(PY) src/main.py
 
 # Lint check
 # Линт проверка
