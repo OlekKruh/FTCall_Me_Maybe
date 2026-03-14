@@ -17,6 +17,8 @@ MYPY_FLAGS  = --warn-return-any \
 install:
 	@echo "Checking for Poetry..."
 	@command -v $(POETRY) >/dev/null 2>&1 || (echo "Poetry not found. Installing via pip..." && $(PY) -m pip install $(POETRY))
+	@echo "Synchronizing lock file..."
+	$(POETRY) lock --no-update
 	@echo "Configuring virtual environment..."
 	$(POETRY) config virtualenvs.in-project true
 	$(POETRY) install
