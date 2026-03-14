@@ -16,9 +16,9 @@ MYPY_FLAGS  = --warn-return-any \
 # Установка: создаем локальный venv
 install:
 	@echo "Checking for Poetry..."
-	@command -v $(POETRY) >/dev/null 2>&1 || (echo "Poetry not found. Installing via pip..." && $(PY) -m pip install $(POETRY))
-	@echo "Synchronizing lock file..."
-	$(POETRY) lock --no-update
+	@command -v $(POETRY) >/dev/null 2>&1 || (echo "Poetry not found. Installing..." && $(PY) -m pip install $(POETRY))
+	@echo "Repairing lock file inconsistencies..."
+	$(POETRY) lock --no-update || $(POETRY) lock
 	@echo "Configuring virtual environment..."
 	$(POETRY) config virtualenvs.in-project true
 	$(POETRY) install
@@ -27,7 +27,7 @@ install:
 # Запуск: прокидываем переменную окружения прямо в процесс
 run:
 	@echo "Starting with HF_HOME=$(LOCAL_HF_HOME)"
-	HF_HOME=$(LOCAL_HF_HOME) $(POETRY) run $(PY) $(MAIN)
+	HF_HOME=$$(pwd)/.model_cache $(POETRY) run $(PY) main.py
 
 # Lint check
 # Линт проверка
