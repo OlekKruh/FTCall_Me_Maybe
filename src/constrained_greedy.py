@@ -2,7 +2,7 @@ import json
 from typing import Dict, Optional, List, Any
 from colors import BOLD, CYAN, RESET
 from alive_progress import alive_bar
-from .llm_sdk import Small_LLM_Model  # type: ignore
+from llm_sdk.llm_sdk import Small_LLM_Model  # type: ignore
 
 
 class ModelManager:
