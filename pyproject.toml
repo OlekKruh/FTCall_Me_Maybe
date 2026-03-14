@@ -1,7 +1,7 @@
 [project]
 name = "call-my-maybe"
 version = "0.1.0"
-package-made = false
+package-mode = false
 description = "LLM Function Calling with Constrained Decoding"
 authors = [
     {name = "okruhlia", email = "okruhlia@student.42warsaw.pl"}
@@ -12,6 +12,7 @@ requires-python = ">=3.12,<4.0"
 dependencies = [
     "alive-progress>=3.3.0",
     "pydantic>=2.0.0",
+    "llm-sdk"
 ]
 
 [tool.poetry.dependencies]
