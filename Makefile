@@ -1,6 +1,6 @@
 POETRY      = poetry
 PY          = python3
-MAIN        = main.py
+MAIN        = src/main.py
 OUTPUT_DIR  = data/output
 LOCAL_HF_HOME = $(shell pwd)/.model_cache
 
@@ -25,7 +25,8 @@ install:
 # Запуск: прокидываем переменную окружения прямо в процесс
 run:
 	@echo "Starting with HF_HOME=$(LOCAL_HF_HOME)"
-	HF_HOME=$$(pwd)/.model_cache $(POETRY) run $(PY) src/main.py
+	export PYTHONPATH=$$(pwd):$$(pwd)/src:$${PYTHONPATH} && \
+	HF_HOME=$(LOCAL_HF_HOME) $(POETRY) run $(PY) $(MAIN)
 
 # Lint check
 # Линт проверка
