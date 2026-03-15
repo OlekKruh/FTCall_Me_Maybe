@@ -1,6 +1,6 @@
 # Call me maybe
 
-*This project has been created as part of the 42 curriculum by ndemkiv, okruhlia.*
+*This project has been created as part of the 42 curriculum by okruhlia.*
 
 > [!WARNING]
 > *The accuracy of the information or implementation may not correspond to reality.*

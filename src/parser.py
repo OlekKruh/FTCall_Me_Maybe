@@ -14,7 +14,7 @@ class TestList(RootModel):
 
 class TypeInfo(BaseModel):
     """Schema for parameter or return type information."""
-    type: str
+    type: int | float | bool | str | Any | None = None
 
 
 class FunctionModel(BaseModel):
